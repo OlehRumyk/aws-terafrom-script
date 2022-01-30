@@ -1,0 +1,6 @@
+.terraform
+.terraform.*
+aws_vpc*
+terraform.auto.tfvars
+temp
+workspace.tf
