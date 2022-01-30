@@ -34,3 +34,6 @@ delete: ## Use for start terrafrom script for delete infrastructure
 	$(info ********** Proccess up terraform sctipt for delete or change infrastructure has begun **********)
 	$(info ************************************************************************************************)
 	@terraform destroy
+
+output: ## Use for save terraform output to file
+	@terraform output -json > ./infrastructure.json

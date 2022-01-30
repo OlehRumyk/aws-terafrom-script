@@ -2,6 +2,9 @@
 
 This is a script for create EC2 instance in the AWS Cloud
 
+[AWS provider - manual](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+[Terraform cloud](https://app.terraform.io/)
+
 ## Variables
 
 | variable       | type   | defaullt  | required | description          |
@@ -15,7 +18,3 @@ This is a script for create EC2 instance in the AWS Cloud
 
 
 ## Configuration
-
-```bash
-ssh-keygen -t rsa -b 4096 -C <email> -f ./<file_name_for_key> -N ''
-```

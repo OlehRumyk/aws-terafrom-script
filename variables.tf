@@ -16,6 +16,18 @@ variable aws_region {
   default     = ""
 }
 
+variable your_first_name {
+  description = ""
+  type        = string
+  default     = ""
+}
+
+variable your_last_name {
+  description = ""
+  type        = string
+  default     = ""
+}
+
 variable aws_access_key {
   description = "AWS access key"
   type        = string
@@ -33,3 +45,19 @@ variable aws_key_pair {
   type        = string
   default     = ""
 }
+
+variable cidr_network {
+  description = ""
+  type        = map
+  default     = {
+    "dev"   = "10.20"
+    "prod"  = "10.30"
+  }
+}
+
+variable ip_access_list {
+  description = ""
+  type        = list
+  default     = []
+}
+
