@@ -46,3 +46,9 @@ output lb_dns {
 
 }
 
+output ip_access_list {
+  description = "IP whitelist"
+  sensitive   = false
+  value       = var.ip_access_list
+}
+
