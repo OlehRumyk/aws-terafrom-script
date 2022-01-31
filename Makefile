@@ -1,5 +1,8 @@
 .PHONY: help
 
+SHELL := /bin/bash
+MAKEFILE_PATH := ./Makefile
+
 help:  ## Display this help
 	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m\033[0m\n\nOptions:\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-10s\033[0m %s\n", $$1, $$2 }' $(MAKEFILE_LIST)
 	${info }
@@ -16,6 +19,24 @@ reinit: ## Use for re-initialization terraform script
 check: ## Use for validation terraform script
 	$(info ********** Proccess up validate terraform script has begun **********)
 	@terraform validate
+
+#test: ## TEST
+#	@if [ -a ./terraform.auto.tfvars ]; then cp ./terraform.auto.tfvars ./terraform.auto.tfvars_$$(date '+%Y_%m_%d_%H_%M_%S'); fi;
+
+#@if [ -a ./terraform.auto.tfvars ]; then cp ./terraform.auto.tfvars ./terraform.auto.tfvars_$$(data '+%Y_%m_%d_%H_%M_%S'); fi;
+
+config: ## Use for create configuration file
+	$(info ********** Proccess generate configuration file has begun **********)
+	@if [ -a ./terraform.auto.tfvars ]; then cp ./terraform.auto.tfvars ./terraform.auto.tfvars_$$(date '+%Y_%m_%d_%H_%M_%S'); fi;
+	@read -p 'Project name: ' PROJECT && echo "project_name = \"$${PROJECT}\"" > ./terraform.auto.tfvars
+	@read -p 'Environment: ' ENVIRONMENT && echo "environment = \"$${ENVIRONMENT}\"" >> ./terraform.auto.tfvars
+	@read -p 'The AWS region: ' AWS_REGION && echo "aws_region = \"$${AWS_REGION}\"" >> ./terraform.auto.tfvars
+	@read -p 'Your first name: ' YOUR_FIRST_NAME && echo "your_first_name = \"$${YOUR_FIRST_NAME}\"" >> ./terraform.auto.tfvars
+	@read -p 'Your last name: ' YOUR_LAST_NAME && echo "your_last_name = \"$${YOUR_LAST_NAME}\"" >> ./terraform.auto.tfvars
+	@read -p 'AWS access key: ' AWS_ACCESS_KEY && echo "aws_access_key = \"$${AWS_ACCESS_KEY}\"" >> ./terraform.auto.tfvars
+	@read -p 'AWS secret key: ' AWS_SECRET_KEY && echo "aws_secret_key = \"$${AWS_SECRET_KEY}\"" >> ./terraform.auto.tfvars
+	@read -p 'SSH public key: ' AWS_KEY_PAIR && echo "aws_key_pair = \"$${AWS_KEY_PAIR}\"" >> ./terraform.auto.tfvars
+	@read -p 'IP access list. For example: [ "xxx.xxx.xxx.xxxx/32", "xxx.xxx.xxx.xxxx/32" ]: ' IP_ACCESS_LIST && echo "ip_access_list = $${IP_ACCESS_LIST}" >> ./terraform.auto.tfvars
 
 plan: ## Use for view plan terrarorn script
 	$(info ********** Proccess view plan has begun **********)

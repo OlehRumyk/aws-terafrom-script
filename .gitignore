@@ -1,8 +1,8 @@
 .terraform
 .terraform.*
-aws_vpc*
-terraform.auto.tfvars
+terraform.auto.*
 temp
 workspace.tf
 TEMP.md
 infrastructure.json
+.vscode

@@ -11,19 +11,7 @@ variable environment {
 }
 
 variable aws_region {
-  description = "The region in AWS"
-  type        = string
-  default     = ""
-}
-
-variable your_first_name {
-  description = ""
-  type        = string
-  default     = ""
-}
-
-variable your_last_name {
-  description = ""
+  description = "The AWS region"
   type        = string
   default     = ""
 }
@@ -41,13 +29,13 @@ variable aws_secret_key {
 }
 
 variable aws_key_pair {
-  description = ""
+  description = "SSH public key"
   type        = string
   default     = ""
 }
 
 variable cidr_network {
-  description = ""
+  description = "Options to create VPC"
   type        = map
   default     = {
     "dev"   = "10.20"
@@ -55,9 +43,20 @@ variable cidr_network {
   }
 }
 
+variable your_first_name {
+  description = "Your first name"
+  type        = string
+  default     = ""
+}
+
+variable your_last_name {
+  description = "Your last name"
+  type        = string
+  default     = ""
+}
+
 variable ip_access_list {
-  description = ""
+  description = "IP whitelist"
   type        = list
   default     = []
 }
-
