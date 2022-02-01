@@ -21,10 +21,12 @@ def check_url_with_use_proxy(url, proxy_host_port):
 
         response = requests.get(url, proxies=proxies)
         if response.status_code == 200:
+            print("Close access to web service:", url)
             return True
-
+        else:
+            print("If usage proxy server, not access to web service")
     except:
-        print("Something wrong!")
+        print("Something wrong! Check proxy configuration")
         return False
 
 def isOpen(ip, port):

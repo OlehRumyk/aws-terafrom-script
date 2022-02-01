@@ -13,9 +13,9 @@ def check_bit_in_file(host_ssh,username,key_file):
         i = check_param in str(data)
         ssh.close()
         if i == True:
-            print("You should change the file permissions")
+            print("Checking file in server: false")
         else:
-            print("Everything is fine with a file access rights")
+            print("Checking file in server: true")
     except:
         print("Something wrong! Error ssh connect")
         return False

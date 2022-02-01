@@ -15,7 +15,7 @@ def check_ip_with_white_list(white_list, expertal_ip):
     try:
         ip = expertal_ip + "/32"
         if ip in white_list:
-            print('IP exists in the whitelist!')
+            print('Your IP exists in the whitelist!')
         else:
             print('IP not exists!')
     except:

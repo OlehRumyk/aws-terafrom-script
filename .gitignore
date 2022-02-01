@@ -1,6 +1,7 @@
 .terraform
 .terraform.*
 terraform.auto.*
+!terraform.auto.tfvars.example
 temp
 workspace.tf
 TEMP.md

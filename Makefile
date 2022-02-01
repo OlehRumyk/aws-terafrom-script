@@ -20,11 +20,6 @@ check: ## Use for validation terraform script
 	$(info ********** Proccess up validate terraform script has begun **********)
 	@terraform validate
 
-#test: ## TEST
-#	@if [ -a ./terraform.auto.tfvars ]; then cp ./terraform.auto.tfvars ./terraform.auto.tfvars_$$(date '+%Y_%m_%d_%H_%M_%S'); fi;
-
-#@if [ -a ./terraform.auto.tfvars ]; then cp ./terraform.auto.tfvars ./terraform.auto.tfvars_$$(data '+%Y_%m_%d_%H_%M_%S'); fi;
-
 config: ## Use for create configuration file
 	$(info ********** Proccess generate configuration file has begun **********)
 	@if [ -a ./terraform.auto.tfvars ]; then cp ./terraform.auto.tfvars ./terraform.auto.tfvars_$$(date '+%Y_%m_%d_%H_%M_%S'); fi;

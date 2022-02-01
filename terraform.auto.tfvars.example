@@ -1,0 +1,9 @@
+project_name    = ""
+environment     = ""
+aws_region      = ""
+your_first_name = ""
+your_last_name  = ""
+aws_access_key  = ""
+aws_secret_key  = ""
+aws_key_pair    = ""
+ip_access_list  = [ "XXX.XXX.XXX.XX/32", "XXX.XXX.XXX.XX/32" ]
