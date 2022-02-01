@@ -7,7 +7,7 @@ variable project_name {
 variable environment {
   description = "The name environment"
   type        = string
-  default     = ""
+  default     = "dev"
 }
 
 variable aws_region {

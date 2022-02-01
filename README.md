@@ -32,12 +32,12 @@ ssh-keygen -t rsa -b 4096 -C <your_email> -f <path_fo_folder>/<file_name_for_key
 | variable       | type   | defaullt  | required | description          |
 | -------------- | ------ | --------- | -------- | -------------------- |
 | project_name   | string | "project" | no       | The project name     |
-| environment    | string | "test"    | no       | The name environment |
+| environment    | string | "dev"     | no       | The name environment |
 | aws_region     | string | ""        | yes      | The AWS region                     |
 | aws_access_key | string | ""        | yes      | AWS access key       |
 | aws_secret_key | string | ""        | yes      | AWS secret key       |
 | aws_key_pair   | string | ""        | yes      | SSH public key                     |
-| cidr_network| map | { "dev"   = "10.20" "prod"  = "10.30" }|Options to create VPC|
+| cidr_network| map | { "dev"   = "10.20" "prod"  = "10.30" }| no | Parameters for create VPC |
 | your_first_name | string | ""| yes| Your first name|
 | your_last_name| string| ""| yes| Your last name|
 | ip_access_list| list | [] | yes | IP whitelist|
